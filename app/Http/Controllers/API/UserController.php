@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
-use App\Models\User;
 use Exception;
-use GrahamCampbell\ResultType\Success;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Laravel\Fortify\Rules\Password;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Laravel\Fortify\Rules\Password;
+use GrahamCampbell\ResultType\Success;
+use App\Http\Controllers\API\ResponseFormatter;
 
 class UserController extends Controller
 {
