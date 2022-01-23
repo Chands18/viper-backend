@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Psy\Command\WhereamiCommand;
+use App\Helpers\ResponseFormatter;
+use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {

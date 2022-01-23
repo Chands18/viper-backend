@@ -5,12 +5,12 @@ namespace App\Http\Controllers\API;
 use Exception;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Helpers\ResponseFormatter;
 use Laravel\Fortify\Rules\Password;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use GrahamCampbell\ResultType\Success;
-use App\Http\Controllers\API\ResponseFormatter;
+
 
 class UserController extends Controller
 {
@@ -35,9 +35,9 @@ class UserController extends Controller
 
             $tokenResult = $user->createToken('authToken')->plainTextToken;
 
-            return ResponseFormatter::Success([
+            return ResponseFormatter::success([
                 'access_token' => $tokenResult,
-                'token-type' => 'Bearer',
+                'token_type' => 'Bearer',
                 'user' => $user
             ],'User registered');
         } catch (Exception $error)
