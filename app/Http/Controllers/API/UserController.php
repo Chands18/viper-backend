@@ -96,7 +96,7 @@ class UserController extends Controller
         $user = Auth::user();
         $user->update($data);
 
-        return ResponseFormatter::success('Profile Updated');
+        return ResponseFormatter::success($user,'Profile Updated');
     }
 
     public function logout(Request $request)
